@@ -374,7 +374,9 @@ const Page = () => {
 					<h1 className="text-[6vh] font-bold super-arena z-[10]">
 						November 2025
 					</h1>
-					<p className="text-lg z-[10]">Excited to see what comes next!</p>
+					<p className="text-[2.25vh] z-[10] hand-coffe">
+						Excited to see what comes next!
+					</p>
 					<img
 						src="/imgs/paper4.png"
 						alt="???"
@@ -390,7 +392,9 @@ const Page = () => {
 					<h1 className="text-[6vh] font-bold super-arena z-[10]">
 						December 2025
 					</h1>
-					<p className="text-lg z-[10]">Excited to see what comes next!</p>
+					<p className="text-[2.25vh] z-[10] hand-coffe">
+						Excited to see what comes next!
+					</p>
 
 					<img
 						src="/imgs/paper4.png"
@@ -423,6 +427,12 @@ const Page = () => {
 			<img
 				src="/imgs/smile.png"
 				className="w-[20vw] absolute top-[0vh] rotate-[15deg] right-[1vw] z-[1]"
+				alt=""
+			/>
+
+			<img
+				src="/imgs/eyes.png"
+				className="w-[25vw] absolute bottom-[-8vh] rotate-[0deg] right-[-7vw] z-[1]"
 				alt=""
 			/>
 

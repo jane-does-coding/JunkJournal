@@ -58,16 +58,20 @@ const MainPage = () => {
 						alt=""
 					/>
 				</Link>
-				<img
-					src="/imgs/note2.png"
-					className="absolute right-[38vw] bottom-[45vh] w-[20vw] rounded-[0.5vh] hover:rotate-[-2deg] hover:scale-110 transition rotate-[-4deg] cursor-pointer"
-					alt=""
-				/>
-				<img
-					src="/imgs/receipt.png"
-					className="absolute right-[75vw] bottom-[12vh] w-[15vw] rounded-[0.5vh] shadow-neutral-800/70 hover:shadow-2xl hover:rotate-[-4deg] hover:scale-105 transition rotate-[-0deg] cursor-pointer shadow-lg"
-					alt=""
-				/>
+				<Link href={"/gallery"}>
+					<img
+						src="/imgs/note2.png"
+						className="absolute right-[38vw] bottom-[45vh] w-[20vw] rounded-[0.5vh] hover:rotate-[-2deg] hover:scale-110 transition rotate-[-4deg] cursor-pointer"
+						alt=""
+					/>
+				</Link>
+				<Link href={"https://mood-memoir.vercel.app/"}>
+					<img
+						src="/imgs/receipt.png"
+						className="absolute right-[75vw] bottom-[12vh] w-[15vw] rounded-[0.5vh] shadow-neutral-800/70 hover:shadow-2xl hover:rotate-[-4deg] hover:scale-105 transition rotate-[-0deg] cursor-pointer shadow-lg"
+						alt=""
+					/>
+				</Link>
 				<img
 					src="/imgs/dollar.png"
 					className="absolute right-[65vw] bottom-[65vh] w-[25vw] rounded-[0.5vh] shadow-neutral-800/70 hover:shadow-2xl hover:rotate-[-0deg] hover:scale-[103%] transition rotate-[-0deg] cursor-pointer shadow-lg"
