@@ -46,11 +46,13 @@ const MainPage = () => {
 					className="absolute right-[16vw] top-[4vh] h-[13vh] rounded-[0.5vh] "
 					alt=""
 				/>
-				<img
-					src="/imgs/pile.png"
-					className="absolute right-[40vw] bottom-[4vh] w-[30vw] rounded-[0.5vh] hover:rotate-[0deg] hover:scale-105 transition rotate-[3deg] cursor-pointer"
-					alt=""
-				/>
+				<Link href={"/book"}>
+					<img
+						src="/imgs/pile.png"
+						className="absolute right-[40vw] bottom-[4vh] w-[30vw] rounded-[0.5vh] hover:rotate-[0deg] hover:scale-105 transition rotate-[3deg] cursor-pointer"
+						alt=""
+					/>
+				</Link>
 				<Link href={"/calendar"}>
 					<img
 						src="/imgs/calendar.jpg"
