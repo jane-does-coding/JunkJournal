@@ -74,11 +74,13 @@ const MainPage = () => {
 						alt=""
 					/>
 				</Link>
-				<img
-					src="/imgs/dollar.png"
-					className="absolute right-[65vw] bottom-[65vh] w-[25vw] rounded-[0.5vh] shadow-neutral-800/70 hover:shadow-2xl hover:rotate-[-0deg] hover:scale-[103%] transition rotate-[-0deg] cursor-pointer shadow-lg"
-					alt=""
-				/>
+				<Link href={"/notes"}>
+					<img
+						src="/imgs/dollar.png"
+						className="absolute right-[65vw] bottom-[65vh] w-[25vw] rounded-[0.5vh] shadow-neutral-800/70 hover:shadow-2xl hover:rotate-[-0deg] hover:scale-[103%] transition rotate-[-0deg] cursor-pointer shadow-lg"
+						alt=""
+					/>
+				</Link>
 				<Link href={"/random"}>
 					<img
 						src="/imgs/keychain.png"

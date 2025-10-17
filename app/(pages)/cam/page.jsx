@@ -89,8 +89,8 @@ const Page = () => {
 						alt=""
 					/>
 					<p className="absolute top-[37.5vh] text-center leading-[6vh] text-[3vh] font-extralight hand-coffe w-[27vw] pr-[3vw] pl-0 right-[0vw] z-[10]">
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus
-						laboriosam commodi saepe, voluptas autem numquam magni
+						The main reason I started web dev, is because I wanted to design
+						websites, I was first a UI/UX designer, before I became a dev.
 					</p>
 				</div>
 			</div>

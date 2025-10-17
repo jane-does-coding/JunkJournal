@@ -55,7 +55,7 @@ const Random = () => {
 			>
 				<FaCaretLeft className="text-[3vh]" />
 			</Link>
-			<h2 className="text-[7vh] rotate-[-90deg] hand-coffe absolute left-0 top-[50%] translate-y-[-50%] z-[20]">
+			<h2 className="text-[7vh] rotate-[-90deg] hand-coffe absolute left-[-5vw] top-[50%] translate-y-[-50%] z-[20] py-[1.5vh] px-[2vw] bg-white rounded-[3vh]">
 				Random Facts
 			</h2>
 
