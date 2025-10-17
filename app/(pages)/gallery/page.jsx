@@ -90,8 +90,7 @@ const Page = () => {
 			<div className="relative z-10 px-[8vw] pb-32">
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 					{images.map((src, index) => {
-						// Each column gets a slightly different parallax speed
-						const columnSpeed = (index % 3) * 0.1 + 0.05; // 0.05, 0.15, 0.25
+						const columnSpeed = (index % 3) * 0.1 + 0.05;
 						return (
 							<div
 								key={index}

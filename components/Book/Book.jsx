@@ -8,8 +8,8 @@ export default function Book() {
 	useEffect(() => {
 		const updateSize = () => {
 			setDimensions({
-				width: window.innerWidth * 0.35, // each page = 35vw (total ~70vw)
-				height: window.innerHeight * 0.8, // 80vh
+				width: window.innerWidth * 0.35,
+				height: window.innerHeight * 0.8,
 			});
 		};
 		updateSize();
@@ -17,7 +17,6 @@ export default function Book() {
 		return () => window.removeEventListener("resize", updateSize);
 	}, []);
 
-	// ✅ Each page now has a `content` field containing JSX
 	const pages = [
 		{
 			content: (
@@ -192,7 +191,6 @@ export default function Book() {
 		},
 	];
 
-	// Avoid SSR rendering before client mounts
 	if (dimensions.width === 0 || dimensions.height === 0) return null;
 
 	return (

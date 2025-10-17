@@ -8,14 +8,12 @@ const Page = () => {
 	const [notes, setNotes] = useState([]);
 	const [message, setMessage] = useState("");
 
-	// Fetch notes from API
 	useEffect(() => {
 		fetch("/api/notes")
 			.then((res) => res.json())
 			.then((data) => setNotes(data));
 	}, []);
 
-	// Submit new note
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		if (!message.trim()) return;
