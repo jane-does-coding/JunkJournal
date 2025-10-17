@@ -82,7 +82,7 @@ const Page = () => {
 						Notes
 					</h3>
 					{notes.length === 0 ? (
-						<p className="text-gray-600">No notes yet — be the first!</p>
+						<p className="text-gray-600">No notes yet, be the first!</p>
 					) : (
 						<div className="space-y-[1vh]">
 							{notes.map((note) => (
