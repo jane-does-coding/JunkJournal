@@ -1,19 +1,14 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
-
-const filePath = path.join(process.cwd(), "app/data/notes.json");
+import prisma from "../../libs/prismadb";
 
 export async function GET() {
 	try {
-		if (!fs.existsSync(filePath)) {
-			fs.writeFileSync(filePath, "[]", "utf-8");
-		}
-		const data = fs.readFileSync(filePath, "utf-8");
-		return NextResponse.json(JSON.parse(data));
+		const notes = await prisma.note.findMany({});
+		return NextResponse.json(notes);
 	} catch (err) {
+		console.error(err);
 		return NextResponse.json(
-			{ error: "Failed to read notes" },
+			{ error: "Failed to load notes" },
 			{ status: 500 }
 		);
 	}
@@ -26,15 +21,13 @@ export async function POST(req) {
 			return NextResponse.json({ error: "Invalid message" }, { status: 400 });
 		}
 
-		if (!fs.existsSync(filePath)) fs.writeFileSync(filePath, "[]", "utf-8");
+		const newNote = await prisma.note.create({
+			data: { content: message },
+		});
 
-		const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-		const newNote = { id: Date.now(), message };
-		data.unshift(newNote);
-
-		fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf-8");
 		return NextResponse.json(newNote);
 	} catch (err) {
+		console.error(err);
 		return NextResponse.json({ error: "Failed to save note" }, { status: 500 });
 	}
 }

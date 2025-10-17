@@ -1,7 +1,27 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 
 const MainPage = () => {
+	useEffect(() => {
+		// Preload the sound
+		const clickSound = new Audio("/sounds/click.mp3");
+
+		// Attach to all links
+		const handleClick = () => {
+			clickSound.currentTime = 0; // rewind if clicked rapidly
+			clickSound.play();
+		};
+
+		const links = document.querySelectorAll("a");
+		links.forEach((link) => link.addEventListener("click", handleClick));
+
+		return () => {
+			links.forEach((link) => link.removeEventListener("click", handleClick));
+		};
+	}, []);
+
 	return (
 		<div>
 			<div className="bg-neutral-600 h-screen w-full overflow-hidden relative">
@@ -16,36 +36,33 @@ const MainPage = () => {
 					className="absolute bottom-[0vw] right-[0vh] w-[20vw] rounded-[0.5vh] transition"
 					alt=""
 				/>
-				{/* <img
-				src="/imgs/clock3.png"
-				className="absolute right-[52vw] bottom-[45vh] w-[15vw] rounded-[0.5vh] hover:rotate-[-2deg] hover:scale-110 transition rotate-[-4deg] cursor-pointer"
-				alt=""
-			/> */}
+
 				<img
 					src="/imgs/paper4.png"
-					className="absolute right-[10vw] top-[3vh] h-[15vh] w-[40vw] rounded-[0.5vh] "
+					className="absolute right-[10vw] top-[3vh] h-[15vh] w-[40vw] rounded-[0.5vh]"
 					alt=""
 				/>
 				<img
 					src="/imgs/letter-j.png"
-					className="absolute right-[40vw] top-[3vh] h-[15vh] rounded-[0.5vh] "
+					className="absolute right-[40vw] top-[3vh] h-[15vh] rounded-[0.5vh]"
 					alt=""
 				/>
 				<img
 					src="/imgs/letter-a.png"
-					className="absolute right-[31vw] top-[4vh] h-[13vh] rounded-[0.5vh] "
+					className="absolute right-[31vw] top-[4vh] h-[13vh] rounded-[0.5vh]"
 					alt=""
 				/>
 				<img
 					src="/imgs/letter-n.png"
-					className="absolute right-[23vw] top-[4vh] h-[13vh] rounded-[0.5vh] "
+					className="absolute right-[23vw] top-[4vh] h-[13vh] rounded-[0.5vh]"
 					alt=""
 				/>
 				<img
 					src="/imgs/letter-e.png"
-					className="absolute right-[16vw] top-[4vh] h-[13vh] rounded-[0.5vh] "
+					className="absolute right-[16vw] top-[4vh] h-[13vh] rounded-[0.5vh]"
 					alt=""
 				/>
+
 				<Link href={"/book"}>
 					<img
 						src="/imgs/pile.png"
@@ -53,6 +70,7 @@ const MainPage = () => {
 						alt=""
 					/>
 				</Link>
+
 				<Link href={"/calendar"}>
 					<img
 						src="/imgs/calendar.jpg"
@@ -60,6 +78,7 @@ const MainPage = () => {
 						alt=""
 					/>
 				</Link>
+
 				<Link href={"/gallery"}>
 					<img
 						src="/imgs/note2.png"
@@ -67,6 +86,7 @@ const MainPage = () => {
 						alt=""
 					/>
 				</Link>
+
 				<Link href={"https://mood-memoir.vercel.app/"}>
 					<img
 						src="/imgs/receipt.png"
@@ -74,6 +94,7 @@ const MainPage = () => {
 						alt=""
 					/>
 				</Link>
+
 				<Link href={"/notes"}>
 					<img
 						src="/imgs/dollar.png"
@@ -81,6 +102,7 @@ const MainPage = () => {
 						alt=""
 					/>
 				</Link>
+
 				<Link href={"/random"}>
 					<img
 						src="/imgs/keychain.png"
@@ -88,6 +110,7 @@ const MainPage = () => {
 						alt=""
 					/>
 				</Link>
+
 				<Link href={"/cam"}>
 					<img
 						src="/imgs/cam.png"
@@ -96,7 +119,9 @@ const MainPage = () => {
 					/>
 				</Link>
 
-				<h2>Hello</h2>
+				<h2 className="absolute bottom-[3vh] left-[3vw] text-white text-2xl font-light">
+					Hello
+				</h2>
 			</div>
 		</div>
 	);

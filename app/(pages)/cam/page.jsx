@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
 import Link from "next/link";
 
 const Page = () => {
 	const [current, setCurrent] = useState(0);
+	const clickSound = useRef;
 
 	const projects = [
 		"/imgs/projects/project1.jpg",
@@ -17,23 +18,40 @@ const Page = () => {
 		"/imgs/projects/project6.jpg",
 	];
 
+	useEffect(() => {
+		// Load sound after mount
+		clickSound.current = new Audio("/sounds/click.mp3");
+	}, []);
+
+	const playClick = () => {
+		if (clickSound.current) {
+			clickSound.current.currentTime = 0;
+			clickSound.current.play().catch(() => {}); // ignore user gesture errors
+		}
+	};
+
 	const handleNext = () => {
+		playClick();
 		setCurrent((prev) => (prev + 1) % projects.length);
 	};
 
 	const handlePrev = () => {
+		playClick();
 		setCurrent((prev) => (prev - 1 + projects.length) % projects.length);
 	};
 
 	return (
 		<div className="bg-neutral-600 h-screen w-full overflow-hidden relative">
+			{/* Back button */}
 			<Link
 				href={"/"}
-				className="cursor-pointer w-[8vh] h-[8vh] bg-white flex items-start justify-start pt-[1.75vh] pl-[1vw] rounded-br-full  hover:scale-110 transition absolute top-0 left-0 z-[10]"
+				onClick={() => playClick()}
+				className="cursor-pointer w-[8vh] h-[8vh] bg-white flex items-start justify-start pt-[1.75vh] pl-[1vw] rounded-br-full hover:scale-110 transition absolute top-0 left-0 z-[10]"
 			>
 				<FaCaretLeft className="text-[3vh]" />
 			</Link>
 
+			{/* Background */}
 			<img
 				src="/imgs/board.jpg"
 				className="w-full h-screen object-cover opacity-95"
@@ -49,13 +67,11 @@ const Page = () => {
 				className="w-[20vw] absolute top-[-4vh] rotate-[-90deg] right-[0vw] z-[1]"
 				alt=""
 			/>
-
 			<img
 				src="/imgs/smile.png"
 				className="w-[20vw] absolute bottom-[1vh] rotate-[0deg] right-[10vw] z-[1]"
 				alt=""
 			/>
-
 			<img
 				src="/imgs/paper4.png"
 				className="w-[25vw] h-[12.5vh] absolute bottom-[5vh] rotate-[0deg] right-[40vw] z-[1]"
@@ -65,6 +81,7 @@ const Page = () => {
 				{"Cool Designsss (Figma)"}
 			</h2>
 
+			{/* Left Section (text + papers) */}
 			<div className="flex flex-col h-screen items-center justify-start absolute top-0 left-[5vw] w-[30vw]">
 				<div className="relative w-[30vw] flex items-center justify-center mt-[5vh]">
 					<img

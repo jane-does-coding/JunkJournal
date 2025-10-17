@@ -71,7 +71,7 @@ const Page = () => {
 			/>
 
 			<h2 className="text-[3.5vh] font-extralight absolute bottom-[9vh] right-[43.4vw] hand-coffe z-[10]">
-				{"Leave a note! (be nice)"}
+				Leave a note! (be nice)
 			</h2>
 
 			{/* Notes Section */}
@@ -81,18 +81,16 @@ const Page = () => {
 					<h3 className="text-[4vh] mb-4 font-semibold text-center hand-coffe">
 						Notes
 					</h3>
-					{notes.length === 0 ? (
+					{notes.length < 1 ? (
 						<p className="text-gray-600">No notes yet, be the first!</p>
 					) : (
 						<div className="space-y-[1vh]">
 							{notes.map((note) => (
 								<div
 									key={note.id}
-									className="bg-yellow-50 border border-yellow-200 p-3 rounded-xl shadow-sm relative"
+									className="bg-yellow-50 border border-yellow-200 p-3 rounded-xl shadow-sm"
 								>
-									{/* 									<img src="/imgs/note-message.png" alt="" />
-									 */}{" "}
-									<h3 className="">{note.message}</h3>
+									<h3>{note.content}</h3>
 								</div>
 							))}
 						</div>
@@ -109,8 +107,6 @@ const Page = () => {
 						className="w-full h-[55vh] absolute top-0 left-0"
 						alt=""
 					/>
-					{/* 					<h3 className="text-2xl mb-4 font-semibold">Write a Note</h3>
-					 */}{" "}
 					<textarea
 						value={message}
 						onChange={(e) => setMessage(e.target.value)}
