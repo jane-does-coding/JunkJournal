@@ -86,7 +86,7 @@ export default function Book() {
 							alt="About"
 							className="w-[50%] max-h-[30vh] object-contain mb-[3vh] rounded-lg absolute top-[-3vh] left-[50%] translate-x-[-50%] opacity-80 z-[0]"
 						/>
-						<h2 className="relative z-[10] text-[clamp(1.5rem,2vw,2.2rem)] font-semibold text-[#2c3e50] mb-[1vh]">
+						<h2 className="relative z-[10] hand-coffe text-[clamp(1.5rem,2vw,2.2rem)] font-semibold text-[#2c3e50] mb-[1vh]">
 							About Me
 						</h2>
 					</div>
@@ -98,6 +98,7 @@ export default function Book() {
 				</div>
 			),
 		},
+
 		{
 			content: (
 				<div className="flex flex-col relative items-center justify-center text-center h-full bg-gradient-to-br from-[#f9fafb] to-[#e5e7eb] p-[2vw] rounded-md shadow-md">
@@ -119,6 +120,47 @@ export default function Book() {
 					<p className="text-[2.5vh] text-[#34495e] leading-[1.6] max-w-[40%] hand-coffe">
 						React • Next.js • TypeScript • Node.js • Prisma • Tailwind CSS •
 						Framer Motion • PostgreSQL • Git & GitHub • REST APIs
+					</p>
+				</div>
+			),
+		},
+		{
+			content: (
+				<div className="flex flex-col items-center relative justify-center text-center h-full bg-gradient-to-br from-[#fafafa] to-[#f0f0f0]/90 p-[2vw] rounded-md shadow-md">
+					<img
+						src="/imgs/paper3.png"
+						alt="About"
+						className="w-[60%] max-h-[30vh] object-contain mb-[3vh] rounded-lg absolute bottom-[-3vh] right-[-3.5vw]"
+					/>
+					<img
+						src="/imgs/paper3.png"
+						alt="About"
+						className="w-[60%] max-h-[30vh] object-contain mb-[3vh] rounded-lg absolute top-[-3vh] right-[-3vw] rotate-[-90deg] opacity-80"
+					/>
+					<img
+						src="/imgs/smile.png"
+						alt="About"
+						className="w-[40%] max-h-[30vh] object-contain mb-[3vh] rounded-lg absolute bottom-[-3vh] left-[-4vw] rotate-[-90deg] opacity-80"
+					/>
+					<img
+						src="/imgs/smile.png"
+						alt="About"
+						className="w-[40%] max-h-[30vh] object-contain mb-[3vh] rounded-lg absolute top-[-1vh] left-[2vw] rotate-[-0deg] opacity-80"
+					/>
+
+					<div className="relative isolate w-full">
+						<img
+							src="/imgs/paper4.png"
+							alt="About"
+							className="w-[50%] max-h-[30vh] object-contain mb-[3vh] rounded-lg absolute top-[-3vh] left-[50%] translate-x-[-50%] opacity-80 z-[0]"
+						/>
+						<h2 className="relative z-[10] hand-coffe text-[clamp(1.5rem,2vw,2.2rem)] font-semibold text-[#2c3e50] mb-[1vh]">
+							My tech stack
+						</h2>
+					</div>
+					<p className="text-[3vh] text-[#34495e] leading-[1.6] max-w-[80%] mt-[5vh] hand-coffe">
+						I do fullstack web development, while I specialize in frontend, with
+						Nextjs, React and other tools
 					</p>
 				</div>
 			),

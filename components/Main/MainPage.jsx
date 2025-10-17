@@ -79,11 +79,13 @@ const MainPage = () => {
 					className="absolute right-[65vw] bottom-[65vh] w-[25vw] rounded-[0.5vh] shadow-neutral-800/70 hover:shadow-2xl hover:rotate-[-0deg] hover:scale-[103%] transition rotate-[-0deg] cursor-pointer shadow-lg"
 					alt=""
 				/>
-				<img
-					src="/imgs/keychain.png"
-					className="absolute right-[50vw] bottom-[65vh] w-[13.5vw] rounded-[0.5vh] hover:rotate-[5deg] hover:scale-110 transition rotate-[10deg] cursor-pointer"
-					alt=""
-				/>
+				<Link href={"/random"}>
+					<img
+						src="/imgs/keychain.png"
+						className="absolute right-[50vw] bottom-[65vh] w-[13.5vw] rounded-[0.5vh] hover:rotate-[5deg] hover:scale-110 transition rotate-[10deg] cursor-pointer"
+						alt=""
+					/>
+				</Link>
 				<Link href={"/cam"}>
 					<img
 						src="/imgs/cam.png"
