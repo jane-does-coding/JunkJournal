@@ -85,9 +85,9 @@ const Page = () => {
 						<p className="text-gray-600">No notes yet, be the first!</p>
 					) : (
 						<div className="space-y-[1vh]">
-							{notes.map((note) => (
+							{notes.map((note, i) => (
 								<div
-									key={note.id}
+									key={i}
 									className="bg-yellow-50 border border-yellow-200 p-3 rounded-xl shadow-sm"
 								>
 									<h3>{note.content}</h3>
