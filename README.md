@@ -7,3 +7,21 @@ Something I struggled with, when making this website was creating a book/journal
 ## Tech stack
 
 I used framer motion, Nextjs, tailwindcss, and Javascript for this website
+
+## Clone
+
+```
+https://github.com/jane-does-coding/JunkJournal
+```
+
+## Install
+
+```
+npm i
+```
+
+## Run
+
+```
+npm run dev
+```
